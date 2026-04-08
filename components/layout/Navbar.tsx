@@ -16,7 +16,7 @@ export function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <Link href="/" className="navbar__logo">
-          jamie.kim
+          Jamie Kim
         </Link>
         <nav className="navbar__links">
           {links.map((link) => (
