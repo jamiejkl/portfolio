@@ -97,13 +97,18 @@ export default function HomePage() {
           </div>
           <h1 className="hero__headline">
             I help people navigate<br />
-            <em>complexity</em> to clarity.
+            <em className="hero__headline-em">complexity</em> to clarity.
           </h1>
           <p className="hero__sub">
             Focused on understanding how people interact with complex systems —
             examining breakdowns, uncovering insights, and making technology
             work for people.
           </p>
+          <div className="hero__values">
+            <span className="hero__value">curiosity</span>
+            <span className="hero__value">empathy</span>
+            <span className="hero__value">clarity</span>
+          </div>
           <div className="hero__actions">
             <Link href="/work" className="btn btn--primary">View my work</Link>
             <Link href="/about" className="btn btn--ghost">About me</Link>

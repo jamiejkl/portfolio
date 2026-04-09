@@ -1,9 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&family=Mulish:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap");
 
 /* ── Tokens ─────────────────────────────────────── */
 :root {
-  --font-display: "DM Serif Display", Georgia, serif;
+  --font-display: "Lora", Georgia, serif;
   --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "DM Mono", monospace;
   --font-warm: "Mulish", system-ui, sans-serif;
@@ -15,7 +14,9 @@
   --color-text: #1a1916;
   --color-muted: #8a8880;
   --color-faint: #c0bdb4;
-  --color-tag-text: #9a9890;
+  --color-accent: #2d7a3a;
+  --color-accent-bg: #f0f9f0;
+  --color-accent-border: #c8e6c8;
 
   --max-w: 1100px;
   --space-section: 7rem;
@@ -64,14 +65,31 @@ img { display: block; max-width: 100%; }
 .navbar__resume:hover { background: var(--color-surface); }
 
 /* ── Hero ────────────────────────────────────────── */
-.hero { padding: 5rem 0 4rem; border-bottom: 0.5px solid var(--color-border); }
-.hero__status { display: inline-flex; align-items: center; gap: 7px; background: var(--color-surface); border: 0.5px solid var(--color-border); border-radius: 99px; padding: 4px 12px; margin-bottom: 1.75rem; }
+.hero {
+  padding: 5rem 0 4rem;
+  border-bottom: 0.5px solid var(--color-border);
+  background:
+    radial-gradient(ellipse at 90% 0%, #d4f5d4 0%, transparent 50%),
+    radial-gradient(ellipse at 10% 100%, #ede8fb 0%, transparent 50%),
+    var(--color-bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero {
+    background:
+      radial-gradient(ellipse at 90% 0%, #1a3a1a 0%, transparent 50%),
+      radial-gradient(ellipse at 10% 100%, #2a1a3a 0%, transparent 50%),
+      var(--color-bg);
+  }
+}
+.hero__status { display: inline-flex; align-items: center; gap: 7px; background: var(--color-accent-bg); border: 0.5px solid var(--color-accent-border); border-radius: 99px; padding: 4px 12px; margin-bottom: 1.75rem; }
 .hero__status-dot { width: 5px; height: 5px; border-radius: 50%; background: #16a34a; }
-.hero__status-text { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.08em; color: var(--color-muted); }
+.hero__status-text { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; color: #16ba50; }
 .hero__headline { font-family: var(--font-display); font-size: clamp(2.8rem, 6vw, 5rem); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1.5rem; }
-.hero__headline em { font-style: normal; color: var(--color-faint); }
+.hero__headline em { font-style: italic; color: var(--color-accent); background: var(--color-accent-bg); padding: 0 6px; border-radius: 4px; }
 .hero__sub { font-size: 1rem; color: var(--color-muted); max-width: 500px; margin-bottom: 2.5rem; line-height: 1.75; }
-.hero__actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.hero__values { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.hero__value { font-size: 0.75rem; color: var(--color-accent); background: var(--color-accent-bg); border: 0.5px solid var(--color-accent-border); border-radius: 99px; padding: 3px 12px; }
 
 /* ── Buttons ─────────────────────────────────────── */
 .btn { display: inline-flex; align-items: center; padding: 0.6rem 1.4rem; border-radius: var(--radius-sm); font-size: 0.85rem; font-weight: 500; cursor: pointer; transition: opacity 0.2s, background 0.2s; }
@@ -178,6 +196,27 @@ img { display: block; max-width: 100%; }
 .cs-nav { border-top: 0.5px solid var(--color-border); padding-top: 2.5rem; margin-top: 4rem; }
 .cs-nav__next { font-size: 0.95rem; font-weight: 500; transition: opacity 0.2s; }
 .cs-nav__next:hover { opacity: 0.6; }
+
+/* ── Case study status badge ─────────────────────── */
+.cs-status-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #fef9c3;
+  color: #854d0e;
+  border: 0.5px solid #fde68a;
+  border-radius: 99px;
+  padding: 3px 10px;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+}
+.cs-cover-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 4rem;
+}
 
 /* ── Contact page ────────────────────────────────── */
 .contact-page { padding: 4rem 0 var(--space-section); }

@@ -16,6 +16,22 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "email-template-redesign",
+    title: "Email Template Redesign",
+    tagline:
+      "Investigating why partner agencies aren't completing annual verification emails — solo research project for Homage Senior Services.",
+    tags: ["UX Research", "UX Design", "Solo"],
+    role: "UX Researcher / UX Designer",
+    duration: "Ongoing",
+    projectType: "Individual project",
+    tools: ["Microsoft Forms", "SharePoint", "Miro", "Figma"],
+    methods: ["Survey", "Interview", "Persona Development"],
+    researchType: "Mixed Methods",
+    year: "2025",
+    coverImage: "/images/email-template-cover.jpg",
+    status: "published",
+  },
+  {
     slug: "colleague-ai",
     title: "Colleague AI",
     tagline:
