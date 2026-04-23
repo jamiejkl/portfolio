@@ -100,9 +100,7 @@ export default function HomePage() {
             <em className="hero__headline-em">complexity</em> to clarity.
           </h1>
           <p className="hero__sub">
-            Focused on understanding how people interact with complex systems —
-            examining breakdowns, uncovering insights, and making technology
-            work for people.
+            <strong>UX Researcher & UX Research Ops/Program manager</strong> I focus on understanding how people navigate complex systems. I take a curious, systematic approach to research, asking the right questions, finding patterns, and turning complexity into clarity.
           </p>
           <div className="hero__values">
             <span className="hero__value">curiosity</span>
